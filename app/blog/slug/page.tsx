@@ -1,7 +1,9 @@
-import useTranslation from 'next-translate/useTranslation';
+import getT from 'next-translate/getT';
+import i18n from '../../../i18n.json';
 
-export default function Page() {
-  const { t } = useTranslation('common');
+export default async function Page() {
+  global.i18nConfig = i18n;
+  const t = await getT('en', 'common');
   const example = t('variable-example', { count: 42 });
 
   return (

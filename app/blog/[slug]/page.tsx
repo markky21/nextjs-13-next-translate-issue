@@ -1,4 +1,5 @@
-import useTranslation from 'next-translate/useTranslation';
+import getT from 'next-translate/getT';
+import i18n from '../../../i18n.json';
 
 interface Props {
   params: { slug: string };
@@ -11,8 +12,9 @@ export const dynamicParams = true;
 // @ts-ignore
 export const revalidate = 'force-cache';
 
-export default function Page({ params: { slug } }: Props) {
-  const { t } = useTranslation('common');
+export default async function Page({ params: { slug } }: Props) {
+  global.i18nConfig = i18n;
+  const t = await getT('en', 'common');
   const example = t('variable-example', { count: 42 });
 
   return (
