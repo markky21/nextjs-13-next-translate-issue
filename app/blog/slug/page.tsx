@@ -1,5 +1,5 @@
 import getT from 'next-translate/getT';
-import i18n from '../../../i18n.json';
+import i18n from '../../../i18n';
 
 export default async function Page() {
   global.i18nConfig = i18n;
