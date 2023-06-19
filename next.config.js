@@ -36,7 +36,7 @@ const nextConfig = {
 const plugins = [
   // Add more Next.js plugins to this list if needed.
   withNx,
-  nextTranslate
+  // nextTranslate
 ];
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
