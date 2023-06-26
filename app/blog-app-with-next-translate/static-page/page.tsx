@@ -8,8 +8,10 @@ export default async function Page() {
 
   return (
     <>
-      <h1>Hello, Home page! SLUG</h1>
-      <div>example: {example}</div>
+      <h1>Hello, Blog Static Page!</h1>
+      <h2>example with next-translate</h2>
+
+      <div>translation example: {example}</div>
     </>
   );
 }
