@@ -10,6 +10,8 @@ export function HomepagePage() {
         This app should reproduce issue with 404 on dynamic app routes when
         next-translation is used
       </h2>
+
+        <p>NOTE: this is branch "without-next-translate" - and here is no issue with 404</p>
       <hr />
       <ul>
         <li>

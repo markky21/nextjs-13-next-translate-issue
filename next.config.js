@@ -1,7 +1,7 @@
 //@ts-check
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const {  withNx } = require('@nx/next');
+const { withNx } = require('@nx/next');
 const nextTranslate = require('next-translate-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -35,4 +35,5 @@ const nextConfig = {
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-module.exports = withNx(nextTranslate(nextConfig));
+// module.exports = withNx(nextTranslate(nextConfig));
+module.exports = withNx(nextConfig);
