@@ -20,3 +20,8 @@ nx run nextjs-13:serve:production
 
 When you run production build locally you can get to all routes without 404, but when you deploy app to vercel, then all dynamic routes in `app` directory throws 404.
 This is not problem if you use old approach with `pages` directory (example not included in this repo).
+
+## Branches
+
+- `main` - Next.js 12 with NextTranslate
+- `without-next-translate` - Next.js 13 without NextTranslate - Working fine but without translation :) 
