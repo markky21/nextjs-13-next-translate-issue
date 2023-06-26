@@ -1,9 +1,9 @@
 //@ts-check
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const {  withNx } = require('@nx/next');
-const nextTranslate = require('next-translate-plugin');
+const { withNx } = require('@nx/next');
 const CopyPlugin = require('copy-webpack-plugin');
+const nextTranslate = require('next-translate-plugin')
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -14,9 +14,11 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Note: we provide webpack above so you should not `require` it
-    // Perform customizations to webpack config
     config.plugins.push(
       new CopyPlugin({
         patterns: [
@@ -27,12 +29,11 @@ const nextConfig = {
         ],
       })
     );
-
-    // Important: return the modified config
     return config;
   },
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-module.exports = withNx(nextTranslate(nextConfig));
+module.exports = withNx(nextConfig);
+// module.exports = withNx(nextTranslate(nextConfig));

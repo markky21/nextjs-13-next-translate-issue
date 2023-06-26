@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import React from 'react';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 export function HomepagePage() {
   return (
@@ -16,15 +17,24 @@ export function HomepagePage() {
           <Link href={'blog-app/static-page'}>Blog app / static page</Link>
         </li>
         <li>
-          <Link href={'blog-app/dynamic-page-123'}>Blog app / dynamic page</Link>
+          <Link href={'blog-app/dynamic-page-123'}>
+            Blog app / dynamic page
+          </Link>
         </li>
         <li>
-          <Link href={'blog-app-with-next-translate/static-page'}>Blog app with translation / static page</Link>
+          <Link href={'blog-app-with-next-translate/static-page'}>
+            Blog app with translation / static page
+          </Link>
         </li>
         <li>
-          <Link href={'blog-app-with-next-translate/dynamic-page-123'}>Blog app with translation / dynamic page</Link>
+          <Link href={'blog-app-with-next-translate/dynamic-page-123'}>
+            Blog app with translation / dynamic page
+          </Link>
         </li>
       </ul>
+      <hr />
+      <p>BTW this "pages" page. </p>
+      <SampleComponent />
     </>
   );
 }
@@ -36,4 +46,9 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {},
     revalidate: 600,
   };
+};
+
+const SampleComponent = () => {
+  const { t } = useTranslation('common');
+  return <div>Translation example: {t('variable-example', { count: 42 })}</div>;
 };
